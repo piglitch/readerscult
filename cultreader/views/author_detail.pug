@@ -1,7 +1,7 @@
 extends layout
 
 block content
-  h1(class="heading-text")(style="font-size: 70px") #{title}<span class="dot"></span> 
+  h1(class="heading-text-") #{title}<span class="dot"></span> 
   h3(class="heading-text") #{author.name}
   p 
   if author.date_of_death && author.date_of_birth

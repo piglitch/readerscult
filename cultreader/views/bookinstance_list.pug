@@ -1,7 +1,7 @@
 extends layout
 
 block content 
-  h1(class="heading-text")(style="font-size: 70px") #{title}<span class="dot"></span> 
+  h1(class="heading-text") #{title}<span class="dot"></span> 
   if bookinstance_list.length 
     dl 
       each val in bookinstance_list

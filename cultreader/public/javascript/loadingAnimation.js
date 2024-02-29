@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
   function startAnimation() {
     let slashes = '//';
     setInterval(() => {
-      if (slashes.length === 10) {
+      if (slashes.length === 20) {
         slashes = '//'; // Reset back to //
       } else {
         slashes += '/'; // Add two slashes

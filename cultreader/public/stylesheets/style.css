@@ -32,6 +32,15 @@ a:hover{
   font-weight: 100;
 }
 
+h1{
+  font-size: 70px;
+}
+@media (max-width: 600px) { /* Adjust the breakpoint according to your needs */
+  h1 {
+      font-size: 45px;
+  }
+}
+
 .dot {
   display: inline-block;
   width: 15px;
