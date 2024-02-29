@@ -1,13 +1,15 @@
 extends layout 
 
 block content 
-  h1= title
+  h1(class="heading-text")(style="font-size: 70px") #{title}<span class="dot"></span> 
   p These are the genres you can explore.
 
   if genre_list.length
-    ul 
+    dl 
       each genre in genre_list
-        li
+        li(class="list-unstyled")
           a(href=genre.url) #{genre.name}
+        p  
   else 
     p There are no genres available right now.
+  script(src='/javascript/redDotToggle.js')  

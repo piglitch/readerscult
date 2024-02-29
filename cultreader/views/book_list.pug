@@ -1,13 +1,14 @@
 extends layout
 
 block content
-  h1= title
+  h1(class="heading-text")(style="font-size: 70px") #{title}<span class="dot"></span> 
   if book_list.length
-    ul
+    dl(class="list-unstyled ml-3")
       each book in book_list
         li
-          a(href=book.url) #{book.title}
+          a(href=book.url)() #{book.title}
           |  (#{book.author.first_name} #{book.author.family_name})
-
+          p 
   else
     p There are no books.
+  script(src='/javascript/redDotToggle.js')  

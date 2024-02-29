@@ -2,8 +2,9 @@ extends layout
 
 block content
 
-  h1 #{title}
-  h3 #{genre.name}
+  h1
+    span(style="color: red") #{title}: 
+    |#{genre.name}
 
   if books_by_genre.length
 

@@ -2,9 +2,11 @@ extends layout
 
 block content
 
-  h1 #{title}: #{bookinstance.book}
+  h1
+    span(style="color: red") #{title}: 
+    |#{bookinstance.book}
 
-    p Do you really want to delete this Book instance?
+  p Do you really want to delete this Book instance?
 
     form(method='POST')
       div.form-group

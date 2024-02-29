@@ -1,7 +1,7 @@
 extends layout
 
 block content
-  h1=title
+  h1(class="heading-text")(style="font-size: 70px") #{title}<span class="dot"></span> 
 
   form(method='POST')
     div.form-group
@@ -20,3 +20,4 @@ block content
     ul
       for error in errors
         li!= error.msg
+  script(src='/javascript/redDotToggle.js') 

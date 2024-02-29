@@ -9,6 +9,9 @@ html(lang='en')
     script(src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js", integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+", crossorigin="anonymous")
     link(rel='stylesheet', href='/stylesheets/style.css')
     link(rel="icon", type="image/png", href="/images/rc_1.png")
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
   body
     div(class='container-fluid')
       div(class='row')
@@ -17,24 +20,37 @@ html(lang='en')
             ul(class='sidebar-nav')
               li
                 a(href='/catalog') Home
+                p
               li
                 a(href='/catalog/books') All books
+                p
               li
                 a(href='/catalog/authors') All authors
+                p
               li
                 a(href='/catalog/genres') All genres
+                p
               li
                 a(href='/catalog/bookinstances') All book-instances
+                p
               li
-                hr
+                hr(style="background-color: darkred")
               li
                 a(href='/catalog/author/create') Create new author
+                p
               li
                 a(href='/catalog/genre/create') Create new genre
+                p
               li
                 a(href='/catalog/book/create') Create new book
+                p
               li
                 a(href='/catalog/bookinstance/create') Create new book instance (copy)
+                p
 
         div(class='col-sm-10')
           block content
+          p 
+          p
+          .loading-animation#loading-animation
+    script(src="/javascript/loadingAnimation.js")       

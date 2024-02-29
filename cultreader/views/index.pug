@@ -1,14 +1,14 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #[em ReadersCult], feed your curiosity and desire to explore one book at a time!
+  h1(class="heading-text")(style="font-size: 70px") #{title}<span class="dot"></span> 
+  p(class="text-white font-weight-lighter") Welcome to #[em ReadersCult], feed your curiosity and desire to explore one book at a time!
 
-  h1 The library currently has...
-
-  ul
-    li #[strong Books:] !{book_count}
-    li #[strong Copies:] !{book_instance_count}
-    li #[strong Copies available:] !{book_available_count}
-    li #[strong Authors:] !{author_count}
-    li #[strong Genres:] !{genre_count}
+  h2(class="heading-text") The library currently has
+  dl(class="list-unstyled ml-3")
+    <em style="color: darkred; font-size: 40px; font-weight: bold">!{book_count}</em> Books 
+    <em style="color: darkred; font-size: 40px; margin-left: 1rem; font-weight: bold">!{book_instance_count}</em> Copies
+    <em style="color: darkred; font-size: 40px; margin-left: 1rem; font-weight: bold">!{book_available_count}</em> Copies available 
+    li <em style="color: darkred; font-size: 40px; font-weight: bold">!{author_count}</em> Authors 
+      <em style="color: darkred; font-size: 40px; margin-left: 1rem; font-weight: bold">!{genre_count}</em> Genres
+  script(src='/javascript/redDotToggle.js') 

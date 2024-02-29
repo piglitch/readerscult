@@ -2,8 +2,10 @@ extends layout
 
 block content
 
-  h1 #{title}: #{author.name}
-  p= author.lifespan
+  h1
+    span(style="color: red") #{title}: 
+    |#{author.name}
+
 
   if author_books.length
 
@@ -23,4 +25,4 @@ block content
       div.form-group
         input#authorid.form-control(type='hidden', name='authorid', value=author._id )
 
-      button.btn.btn-primary(type='submit') Delete
+      button.btn.btn-primary(type='submit')(style="background-color: red") Delete

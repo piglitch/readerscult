@@ -1,8 +1,8 @@
 extends layout
 
 block content
-  h1 #{title}.
-  h3 #{author.name}
+  h1(class="heading-text")(style="font-size: 70px") #{title}<span class="dot"></span> 
+  h3(class="heading-text") #{author.name}
   p 
   if author.date_of_death && author.date_of_birth
     | #{author.date_of_birth_formatted} - #{author.date_of_death_formatted}
@@ -11,9 +11,9 @@ block content
   else 
     | #{author.date_of_birth_formatted} - Present   
 
-  div(style='margin-left:20px;margin-top:20px')
+  div(style='margin-top:20px')
 
-    h4 Books
+    h4(class="heading-text") Books
     if author_books.length
       dl
         each book in author_books
@@ -28,4 +28,4 @@ block content
     a(href=author.url+'/delete') Delete Author
   p
     a(href=author.url+'/update') Update Author
-  
+  script(src='/javascript/redDotToggle.js')     

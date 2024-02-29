@@ -1,12 +1,12 @@
 extends layout
 
 block content
-  h1= title
+  h1(class="heading-text")(style="font-size: 70px") #{title}<span class="dot"></span> 
 
   if author_list.length
-    ul
+    dl
       each author in author_list
-        li
+        li(class="list-unstyled")
           a(href=author.url) #{author.name}
           |  
           if author.date_of_death && author.date_of_birth
@@ -14,7 +14,9 @@ block content
           else if !author.date_of_birth && !author.date_of_death 
             | No data available  
           else 
-            | #{author.date_of_birth_formatted} - Present   
+            | #{author.date_of_birth_formatted} - Present  
+        p     
           
   else
     p There are no authors.
+  script(src='/javascript/redDotToggle.js')    

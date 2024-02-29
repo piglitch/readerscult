@@ -1,14 +1,55 @@
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 14px "Roboto Mono", Monospace;
+  color: beige;
+  background-color: black;
+  font-weight: 100;
+}
+
+html{
+  font: 14px "Roboto Mono", Monospace;
 }
 
 a {
-  color: #00B7FF;
+  color: orange;
+  font-weight: 100;
+}
+
+a:hover{
+  color: beige;
+  text-decoration: underline dotted;
 }
 
 .sidebar-nav {
+  font: 14px "Roboto Mono", Monospace;
+  font-weight: 200;
   margin-top: 20px;
   padding: 0;
   list-style: none;
+}
+
+.heading-text{ 
+  font-weight: 100;
+}
+
+.dot {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: darkred; /* Initial color */
+}
+
+.dot.white {
+  background-color: black; /* Target color */
+}
+
+#loading-animation {
+  font-size: 24px;
+  font-weight: 400;
+  color: yellowgreen;
+}
+
+input, select, textarea{
+  max-width: 400px;
 }
