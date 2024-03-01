@@ -56,8 +56,8 @@ h1{
 
 #loading-animation {
   font-size: 24px;
-  font-weight: 400;
-  color: yellowgreen;
+  font-weight: 100;
+  color: yellow;
 }
 
 input, select, textarea{
