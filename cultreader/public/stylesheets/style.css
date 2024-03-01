@@ -8,6 +8,7 @@ body {
 
 html{
   font: 14px "Roboto Mono", Monospace;
+  text-transform: lowercase;
 }
 
 a {
@@ -61,4 +62,11 @@ h1{
 
 input, select, textarea{
   max-width: 400px;
+}
+
+.footer{
+  margin-top: 50px;
+  width: 100%;
+  color: white; /* Example text color */
+  padding-left: 14px;
 }

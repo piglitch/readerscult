@@ -19,33 +19,33 @@ html(lang='en')
           block sidebar
             ul(class='sidebar-nav')
               li
-                a(href='/catalog') Home
+                a(href='/catalog') home
                 p
               li
-                a(href='/catalog/books') All books
+                a(href='/catalog/books') all books
                 p
               li
-                a(href='/catalog/authors') All authors
+                a(href='/catalog/authors') all authors
                 p
               li
-                a(href='/catalog/genres') All genres
+                a(href='/catalog/genres') all genres
                 p
               li
-                a(href='/catalog/bookinstances') All book-instances
+                a(href='/catalog/bookinstances') all book-instances
                 p
               li
                 hr(style="background-color: darkred")
               li
-                a(href='/catalog/author/create') Create new author
+                a(href='/catalog/author/create') create new author
                 p
               li
-                a(href='/catalog/genre/create') Create new genre
+                a(href='/catalog/genre/create') create new genre
                 p
               li
-                a(href='/catalog/book/create') Create new book
+                a(href='/catalog/book/create') create new book
                 p
               li
-                a(href='/catalog/bookinstance/create') Create new book instance (copy)
+                a(href='/catalog/bookinstance/create') create new book instance (copy)
                 p
 
         div(class='col-sm-10')
@@ -54,3 +54,8 @@ html(lang='en')
           p
           .loading-animation#loading-animation
     script(src="/javascript/loadingAnimation.js")       
+
+    footer.footer 
+      p 
+        a(href="https://github.com/Piglitch", target="_blank", rel="noopener noreferrer")  github 
+        | piglitch
