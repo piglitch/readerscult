@@ -2,6 +2,7 @@ extends layout
 
 block content
   h1(class="heading-text") #{title}<span class="dot"></span>
+  h3(class="heading-text") *if the author does not exist create the author first*
 
   form(method='POST')
     div.form-group
@@ -10,7 +11,7 @@ block content
     div.form-group
       label(for='author') Author:
       select#author.form-control(name='author' required)
-        option(value='') --Please select an author--
+        option(value='') --select an author--
         for author in authors
           if book
             if author._id.toString()===book.author._id.toString()
