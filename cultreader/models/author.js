@@ -7,7 +7,7 @@ const AuthorSchema = new Schema({
   family_name: { type: String, required: true, maxLength: 100 },
   date_of_birth: { type: Date },
   date_of_death: { type: Date },
-})
+});
 
 AuthorSchema.virtual("name").get(function(){
   let fullName = "";
@@ -15,7 +15,7 @@ AuthorSchema.virtual("name").get(function(){
     fullName = `${this.first_name} ${this.family_name}`;    
   } 
   return fullName;
-})
+});
 
 AuthorSchema.virtual("url").get(function(){
   return `/catalog/author/${this._id}`;

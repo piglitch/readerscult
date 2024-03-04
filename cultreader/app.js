@@ -10,7 +10,6 @@ const helmet = require("helmet");
 const RateLimit = require("express-rate-limit");
 
 
-//const dev_db_url = "mongodb+srv://avibanerjee:uuM0ds7r8xYuaAen@cluster0.d8wx0hs.mongodb.net/readercult?retryWrites=true&w=majority"
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 const catalogRouter = require("./routes/catalog");
