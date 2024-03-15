@@ -1,29 +1,22 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-const router = express.Router()
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
-require('dotenv').config()
+const mongoose = require("mongoose");
+const createError = require('http-errors');
+const express = require('express');
+const path = require('path');
+const router = express.Router();
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
+require('dotenv').config();
 const compression = require("compression");
 const helmet = require("helmet");
 const RateLimit = require("express-rate-limit");
 
-
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+const indexRouter = require('./routes/index');
+const usersRouter = require('./routes/users');
 const catalogRouter = require("./routes/catalog");
 
-const mongoose = require("mongoose");
-mongoose.set("strictQuery", false);
-const mongoDB = process.env.MONGODB_URI
+const mongoDB = process.env.MONGODB_URI;
 
-var app = express();
-
-// function getUrl(req){
-//   let fullUrl = `${req.protocol}://${req.get('host')}${req.originalUrl}`;
-//   console.log('Server is up at: ', fullUrl);
-// }
+const app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -46,10 +39,9 @@ const limiter = RateLimit({
   windowMs: 1 * 60 * 1000, // 1 minute
   max: 20,
 });
-// Apply rate limiter to all requests
 app.use(limiter);
 
-app.use(compression()); // Compress all routes
+app.use(compression());
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
@@ -59,28 +51,23 @@ app.use('/admin', router, (req, res) => {
   res.sendStatus(401);
 })
 
-// catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
 });
 
-// error handler
 app.use(function(err, req, res, next) {
-  // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
-
-  // render the error page
   res.status(err.status || 500);
   res.render('error');
 });
 
 main().catch((err) => console.log(err));
-async function main(){
+
+async function main() {
+  console.log('Attempting to connect to MongoDB...');
   await mongoose.connect(mongoDB);
-  console.log('connected to readercult...');
+  console.log('Connected to MongoDB successfully!');
 }
-
-
 
 module.exports = app;
