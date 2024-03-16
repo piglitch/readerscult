@@ -91,8 +91,8 @@ exports.bookinstance_delete_get = asyncHandler(async (req, res, next) => {
   ]);
   if (BookInstance === null ) {
     res.redirect("/catalog/bookinstances");
-  } 
-
+    return;
+  };
   res.render("bookinstance_delete", {
     title: "Delete Bookinstance",
     bookinstance: bookInstance,
@@ -107,8 +107,7 @@ exports.bookinstance_delete_post = asyncHandler(async (req, res, next) => {
     Book.find({ bookInstance: req.params.id }, "title summary").exec(),
   ]);
   await BookInstance.findByIdAndDelete(req.body.bookinstanceid);
-  res.redirect("/catalog/bookinstances");
-  
+  res.redirect("/catalog/bookinstances");  
 });
 
 // Display BookInstance update form on GET.

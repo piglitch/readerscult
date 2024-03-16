@@ -156,7 +156,6 @@ exports.book_delete_post = asyncHandler(async (req, res, next) => {
       book: book,
       book_instances: allBookInstances,
     });
-    return;
   } else {
     await Book.findByIdAndDelete(req.body.bookid);
     res.redirect("/catalog/books");

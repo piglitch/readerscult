@@ -171,7 +171,7 @@ exports.author_update_post = [(req, res, next) => {
         Book.find({ author: req.params.id }, "title summary").exec(),    
       ]);
       res.render("author_form", {
-        title: "Update Book",
+        title: "Update Author",
         author: author,
         errors: errors.array(),
         author_books: allBooksByAuthor,
